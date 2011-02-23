@@ -1,0 +1,21 @@
+<package>
+  <description brief="create_dashboard">
+
+     create_dashboard
+
+  </description>
+  <author>Melonee Wise</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/create_dashboard</url>
+  <depend package="rxtools"/>
+  <depend package="robot_monitor"/>
+  <depend package="std_msgs"/>
+  <depend package="std_srvs"/>
+  <depend package="rospy"/>
+  <depend package="roslib"/>
+  <depend package="create_node"/>
+
+</package>
+
+
