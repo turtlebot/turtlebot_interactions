@@ -31,12 +31,12 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import roslib
-roslib.load_manifest('create_dashboard')
+roslib.load_manifest('turtlebot_dashboard')
 
 import wx
 import rospy
 import string
-import create_node.srv 
+import turtlebot_node.srv 
 
 from status_control import StatusControl
 
@@ -53,7 +53,7 @@ class BreakerControl(StatusControl):
     self._name = breaker_name
     self.raw_byte = 0
     self._breaker_state = 0
-    self._power_control = rospy.ServiceProxy('create_node/set_digital_output', create_node.srv.SetDigitalOutputs)
+    self._power_control = rospy.ServiceProxy('turtlebot_node/set_digital_output', turtlebot_node.srv.SetDigitalOutputs)
     self.digital_outs =[0,0,0]
 
 
@@ -73,7 +73,7 @@ class BreakerControl(StatusControl):
         self.digital_outs[i]=tmp%2
         tmp = tmp >> 1
       self.digital_outs[self._index] = not self.digital_outs[self._index] 
-      power_cmd = create_node.srv.SetDigitalOutputsRequest(self.digital_outs[0], self.digital_outs[1], self.digital_outs[2])
+      power_cmd = turtlebot_node.srv.SetDigitalOutputsRequest(self.digital_outs[0], self.digital_outs[1], self.digital_outs[2])
       #print power_cmd
       self._power_control(power_cmd)
       

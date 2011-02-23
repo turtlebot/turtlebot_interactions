@@ -31,7 +31,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import roslib
-roslib.load_manifest('create_dashboard')
+roslib.load_manifest('turtlebot_dashboard')
 
 import wx
 

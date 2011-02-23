@@ -31,7 +31,7 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import roslib
-roslib.load_manifest('create_dashboard')
+roslib.load_manifest('turtlebot_dashboard')
 
 import wx
 import wx.aui
@@ -44,8 +44,8 @@ from robot_monitor.robot_monitor_panel import RobotMonitorPanel
 import diagnostic_msgs.msg
 import std_msgs.msg
 import std_srvs.srv
-import create_node.msg
-import create_node.srv
+import turtlebot_node.msg
+import turtlebot_node.srv
 
 import rospy
 from roslib import rosenv
@@ -59,25 +59,25 @@ from power_state_control import PowerStateControl
 from diagnostics_frame import DiagnosticsFrame
 from rosout_frame import RosoutFrame
 
-class CreateFrame(wx.Frame):
+class TurtlebotFrame(wx.Frame):
     _CONFIG_WINDOW_X="/Window/X"
     _CONFIG_WINDOW_Y="/Window/Y"
     
-    def __init__(self, parent, id=wx.ID_ANY, title='Create Dashboard', pos=wx.DefaultPosition, size=(400, 50), style=wx.CAPTION|wx.CLOSE_BOX|wx.STAY_ON_TOP):
+    def __init__(self, parent, id=wx.ID_ANY, title='Turtlebot Dashboard', pos=wx.DefaultPosition, size=(400, 50), style=wx.CAPTION|wx.CLOSE_BOX|wx.STAY_ON_TOP):
         wx.Frame.__init__(self, parent, id, title, pos, size, style)
         
         wx.InitAllImageHandlers()
         
-        rospy.init_node('create_dashboard', anonymous=True)
+        rospy.init_node('turtlebot_dashboard', anonymous=True)
         try:
             getattr(rxtools, "initRoscpp")
-            rxtools.initRoscpp("create_dashboard_cpp", anonymous=True)
+            rxtools.initRoscpp("turtlebot_dashboard_cpp", anonymous=True)
         except AttributeError:
             pass
         
-        self.SetTitle('Create Dashboard (%s)'%rosenv.get_master_uri())
+        self.SetTitle('Turtlebot Dashboard (%s)'%rosenv.get_master_uri())
         
-        icons_path = path.join(roslib.packages.get_pkg_dir('create_dashboard'), "icons/")
+        icons_path = path.join(roslib.packages.get_pkg_dir('turtlebot_dashboard'), "icons/")
         
         sizer = wx.BoxSizer(wx.HORIZONTAL)
         self.SetSizer(sizer)
@@ -134,7 +134,7 @@ class CreateFrame(wx.Frame):
         self._power_state_ctrl.SetToolTip(wx.ToolTip("Battery: Stale"))
         static_sizer.Add(self._power_state_ctrl, 1, wx.EXPAND)
         
-        self._config = wx.Config("create_dashboard")
+        self._config = wx.Config("turtlebot_dashboard")
         
         self.Bind(wx.EVT_CLOSE, self.on_close)
         
@@ -214,25 +214,25 @@ class CreateFrame(wx.Frame):
       self._motors_button.toggle(False)
       
     def on_passive_mode(self, evt):
-      passive = rospy.ServiceProxy("/create_node/set_operation_mode",create_node.srv.SetCreateMode )
+      passive = rospy.ServiceProxy("/turtlebot_node/set_operation_mode",turtlebot_node.srv.SetTurtlebotMode )
       try:
-        passive(create_node.msg.CreateSensorState.OI_MODE_PASSIVE)
+        passive(turtlebot_node.msg.TurtlebotSensorState.OI_MODE_PASSIVE)
       except rospy.ServiceException, e:
-        wx.MessageBox("Failed to put the create in passive mode: service call failed with error: %s"%(e), "Error", wx.OK|wx.ICON_ERROR)
+        wx.MessageBox("Failed to put the turtlebot in passive mode: service call failed with error: %s"%(e), "Error", wx.OK|wx.ICON_ERROR)
 
     def on_safe_mode(self, evt):
-      safe = rospy.ServiceProxy("/create_node/set_operation_mode",create_node.srv.SetCreateMode)
+      safe = rospy.ServiceProxy("/turtlebot_node/set_operation_mode",turtlebot_node.srv.SetTurtlebotMode)
       try:
-        safe(create_node.msg.CreateSensorState.OI_MODE_SAFE)
+        safe(turtlebot_node.msg.TurtlebotSensorState.OI_MODE_SAFE)
       except rospy.ServiceException, e:
-        wx.MessageBox("Failed to put the create in safe mode: service call failed with error: %s"%(e), "Error", wx.OK|wx.ICON_ERROR)
+        wx.MessageBox("Failed to put the turtlebot in safe mode: service call failed with error: %s"%(e), "Error", wx.OK|wx.ICON_ERROR)
 
     def on_full_mode(self, evt):
-      full = rospy.ServiceProxy("/create_node/set_operation_mode", create_node.srv.SetCreateMode)
+      full = rospy.ServiceProxy("/turtlebot_node/set_operation_mode", turtlebot_node.srv.SetTurtlebotMode)
       try:
-        full(create_node.msg.CreateSensorState.OI_MODE_FULL)
+        full(turtlebot_node.msg.TurtlebotSensorState.OI_MODE_FULL)
       except rospy.ServiceException, e:
-        wx.MessageBox("Failed to put the create in full mode: service call failed with error: %s"%(e), "Error", wx.OK|wx.ICON_ERROR)
+        wx.MessageBox("Failed to put the turtlebot in full mode: service call failed with error: %s"%(e), "Error", wx.OK|wx.ICON_ERROR)
       
 
 

@@ -32,11 +32,11 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 __doc__ = """
-Create_Dashboard
+Turtlebot_Dashboard
 GUI for the PR2."""
 
 import roslib
-roslib.load_manifest('create_dashboard')
+roslib.load_manifest('turtlebot_dashboard')
 
 WXVER = '2.8'
 import wxversion
@@ -47,9 +47,9 @@ else:
   sys.exit(1)
 
 import wx
-import create_dashboard
+import turtlebot_dashboard
 
 app = wx.App()
-frame = create_dashboard.CreateFrame(None)
+frame = turtlebot_dashboard.TurtlebotFrame(None)
 frame.Show()
 app.MainLoop()
