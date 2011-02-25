@@ -1,0 +1,13 @@
+<stack>
+  <description brief="turtlebot_viz">turtlebot_viz</description>
+  <author>Maintained by Melonee Wise</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/turtlebot_viz</url>
+  <depend stack="diagnostics_monitors" /> <!-- robot_monitor -->
+  <depend stack="ros" /> <!-- roslib -->
+  <depend stack="ros_comm" /> <!-- std_srvs, std_msgs, rospy -->
+  <depend stack="rx" /> <!-- rxtools -->
+  <depend stack="turtlebot" /> <!-- turtlebot_node -->
+
+</stack>
