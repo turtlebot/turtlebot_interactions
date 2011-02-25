@@ -53,7 +53,7 @@ class BreakerControl(StatusControl):
     self._name = breaker_name
     self.raw_byte = 0
     self._breaker_state = 0
-    self._power_control = rospy.ServiceProxy('turtlebot_node/set_digital_output', turtlebot_node.srv.SetDigitalOutputs)
+    self._power_control = rospy.ServiceProxy('turtlebot_node/set_digital_outputs', turtlebot_node.srv.SetDigitalOutputs)
     self.digital_outs =[0,0,0]
 
 
