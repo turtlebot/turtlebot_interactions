@@ -134,6 +134,13 @@ class TurtlebotFrame(wx.Frame):
         self._power_state_ctrl.SetToolTip(wx.ToolTip("Battery: Stale"))
         static_sizer.Add(self._power_state_ctrl, 1, wx.EXPAND)
         
+        static_sizer = wx.StaticBoxSizer(wx.StaticBox(self, wx.ID_ANY, "Laptop"), wx.HORIZONTAL)
+        sizer.Add(static_sizer, 0)
+        # Laptop Battery State
+        self._power_state_ctrl_laptop = PowerStateControl(self, wx.ID_ANY, icons_path)
+        self._power_state_ctrl_laptop.SetToolTip(wx.ToolTip("Laptop Battery: Stale"))
+        static_sizer.Add(self._power_state_ctrl_laptop, 1, wx.EXPAND)
+
         self._config = wx.Config("turtlebot_dashboard")
         
         self.Bind(wx.EVT_CLOSE, self.on_close)
@@ -185,10 +192,11 @@ class TurtlebotFrame(wx.Frame):
       if (rospy.get_time() - self._last_dashboard_message_time > 5.0):
           self._motors_button.set_stale()
           self._power_state_ctrl.set_stale()
+          self._power_state_ctrl_laptop.set_stale()
           [ctrl.reset() for ctrl in self._breaker_ctrls]
 #          self._runstop_ctrl.set_stale()
 #          self._wireless_runstop_ctrl.set_stale()
-          ctrls = [self._motors_button, self._power_state_ctrl]
+          ctrls = [self._motors_button, self._power_state_ctrl, self._power_state_ctrl_laptop]
           ctrls.extend(self._breaker_ctrls)
           for ctrl in ctrls:
               ctrl.SetToolTip(wx.ToolTip("No message received on dashboard_agg in the last 5 seconds"))
@@ -245,12 +253,16 @@ class TurtlebotFrame(wx.Frame):
 
             
       battery_status = {}
+      laptop_battery_status = {}
       breaker_status = {}
       op_mode = None
       for status in msg.status:
           if status.name == "/Power System/Battery":
               for value in status.values:
                   battery_status[value.key]=value.value
+          if status.name == "/Power System/Laptop Battery":
+              for value in status.values:
+                  laptop_battery_status[value.key]=value.value
           if status.name == "/Mode/Operating Mode":
               op_mode=status.message
           if status.name == "/Digital IO/Digital Outputs":
@@ -262,6 +274,11 @@ class TurtlebotFrame(wx.Frame):
         self._power_state_ctrl.set_power_state(battery_status)
       else:
         self._power_state_ctrl.set_stale()
+
+      if (laptop_battery_status):
+        self._power_state_ctrl_laptop.set_power_state(laptop_battery_status)
+      else:
+        self._power_state_ctrl_laptop.set_stale()
       
       if (op_mode):
         if (op_mode=='Full'):
