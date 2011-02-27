@@ -102,7 +102,7 @@ class PowerStateControl(wx.Window):
     last_time_remaining = self._time_remaining
     
     self._power_consumption = float(msg['Current (A)'])*float(msg['Voltage (V)'])
-    self._time_remaining = 0.9*self._time_remaining + 0.1*(float(msg['Charge (Ah)'])/float(msg['Current (A)']))*60.0
+    self._time_remaining = 0.9*self._time_remaining + 0.1*(float(msg['Charge (Ah)'])/max(float(msg['Current (A)']), 0.01))*60.0
     self._pct = float(msg['Charge (Ah)'])/float(msg['Capacity (Ah)'])
     self._plugged_in = (float(msg['Current (A)'])>0)
     
