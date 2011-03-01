@@ -37,6 +37,12 @@ import wx
 
 from os import path
 
+def non_zero(value):
+  if value < 0.00001 and value > -0.00001:
+    return 0.00001
+  return value
+  
+
 class PowerStateControl(wx.Window):
   def __init__(self, parent, id, icons_path):
     wx.Window.__init__(self, parent, id, wx.DefaultPosition, wx.Size(60, 32))
@@ -102,7 +108,7 @@ class PowerStateControl(wx.Window):
     last_time_remaining = self._time_remaining
     
     self._power_consumption = float(msg['Current (A)'])*float(msg['Voltage (V)'])
-    self._time_remaining = 0.9*self._time_remaining + 0.1*(float(msg['Charge (Ah)'])/max(float(msg['Current (A)']), 0.01))*60.0
+    self._time_remaining = 0.9*self._time_remaining + 0.1*(float(msg['Charge (Ah)'])/non_zero(float(msg['Current (A)'])))*60.0
     self._pct = float(msg['Charge (Ah)'])/float(msg['Capacity (Ah)'])
     self._plugged_in = (float(msg['Current (A)'])>0)
     
