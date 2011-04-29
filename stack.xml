@@ -1,6 +1,6 @@
 <stack>
   <description brief="turtlebot_viz">turtlebot_viz</description>
-  <author>Maintained by Melonee Wise</author>
+  <author>Maintained by Tully Foote and Melonee Wise</author>
   <license>BSD</license>  
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/turtlebot_viz</url>
