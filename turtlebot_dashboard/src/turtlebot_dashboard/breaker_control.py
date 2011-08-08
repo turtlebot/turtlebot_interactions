@@ -42,7 +42,7 @@ from status_control import StatusControl
 
 from os import path
 
-breaker_prefixes = ("digitalone", "digitaltwo", "digitalthree")
+breaker_prefixes = ("digitalzero", "digitalone", "digitaltwo")
 
 class BreakerControl(StatusControl):
   def __init__(self, parent, id, breaker_index, breaker_name, icons_path):
