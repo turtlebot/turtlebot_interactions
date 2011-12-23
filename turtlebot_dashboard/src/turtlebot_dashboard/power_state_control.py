@@ -32,7 +32,7 @@
 
 import roslib
 roslib.load_manifest('turtlebot_dashboard')
-
+import rospy
 import wx
 
 from os import path
@@ -48,11 +48,11 @@ class PowerStateControl(wx.Window):
     wx.Window.__init__(self, parent, id, wx.DefaultPosition, wx.Size(60, 32))
     
     self._power_consumption = 0.0
-    self._pct = 0
-    self._cap = 0
-    self._char_cap = 0
+    self._pct = 0.0
+    self._cap = 2.7
+    self._char_cap = 2.7
     self._time_remaining = 0.0
-    self._ac_present = 0
+    self._ac_present = 0.0
     
     self._left_bitmap = wx.Bitmap(path.join(icons_path, "battery-minus.png"), wx.BITMAP_TYPE_PNG)
     self._right_bitmap = wx.Bitmap(path.join(icons_path, "battery-plus.png"), wx.BITMAP_TYPE_PNG)
@@ -108,14 +108,22 @@ class PowerStateControl(wx.Window):
     last_pct = self._pct
     last_plugged_in = self._plugged_in
     last_time_remaining = self._time_remaining
-
-    self._char_cap = 0.95*self._char_cap +0.05*float(msg['Charge (Ah)'])     
+    self._char_cap = 0.8*self._char_cap +0.2*float(msg['Charge (Ah)'])     
+    #make sure that battery percentage is not greater than 100%
     if self._char_cap < float(msg['Capacity (Ah)']):
       self._cap = float(msg['Capacity (Ah)'])
     else: 
       self._cap = self._char_cap
+
     self._power_consumption = float(msg['Current (A)'])*float(msg['Voltage (V)'])
-    self._time_remaining = 0.9*self._time_remaining + 0.1*((float(msg['Charge (Ah)'])-self._cap)/non_zero(float(msg['Current (A)'])))*60.0
+    #determine if we're charging or discharging
+    if float(msg['Current (A)'])<0:
+      tmp = (float(msg['Charge (Ah)'])/non_zero(float(msg['Current (A)'])))*60.0
+    else:
+      tmp = ((float(msg['Charge (Ah)'])-self._cap)/non_zero(float(msg['Current (A)'])))*60.0
+
+    self._time_remaining = 0.8*self._time_remaining + 0.2*tmp
+  
     self._pct = float(msg['Charge (Ah)'])/self._cap
     self._plugged_in = (float(msg['Current (A)'])>0)
     
