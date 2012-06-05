@@ -48,7 +48,7 @@ import turtlebot_node.msg
 import turtlebot_node.srv
 
 import rospy
-from roslib import rosenv
+from rosgraph import rosenv
 
 from os import path
 import threading
