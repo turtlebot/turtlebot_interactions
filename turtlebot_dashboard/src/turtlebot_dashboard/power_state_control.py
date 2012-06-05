@@ -125,7 +125,11 @@ class PowerStateControl(wx.Window):
     self._time_remaining = 0.8*self._time_remaining + 0.2*tmp
   
     self._pct = float(msg['Charge (Ah)'])/self._cap
-    self._plugged_in = (float(msg['Current (A)'])>0)
+
+    if self._pct == 1 and float(msg['Current (A)']) == 0:
+        self._plugged_in = True
+    else:
+        self._plugged_in = (float(msg['Current (A)'])>0)
     
     if (last_pct != self._pct or last_plugged_in != self._plugged_in or last_time_remaining != self._time_remaining):
         drain_str = "remaining"
