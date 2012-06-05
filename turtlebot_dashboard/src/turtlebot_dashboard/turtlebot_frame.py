@@ -173,7 +173,7 @@ class TurtlebotFrame(wx.Frame):
         self._dashboard_agg_sub.unregister()
         
     def on_timer(self, evt):
-      level = self._diagnostics_frame._diagnostics_panel.get_top_level_state()
+      level = self._diagnostics_frame.get_top_level_state()
       if (level == -1 or level == 3):
         if (self._diagnostics_button.set_stale()):
             self._diagnostics_button.SetToolTip(wx.ToolTip("Diagnostics: Stale"))
