@@ -5,13 +5,17 @@
   <arg name="base"       value="$(optenv TURTLEBOT_BASE kobuki)"/>  <!-- create, rhoomba -->
   <arg name="stacks"     value="$(optenv TURTLEBOT_STACKS hexagons)"/>  <!-- circles, hexagons -->
   <arg name="3d_sensor"  value="$(optenv TURTLEBOT_3D_SENSOR kinect)"/>  <!-- kinect, asus_xtion_pro -->
+  <arg name="using_fuerte" value="$(optenv TURTLEBOT_USING_FUERTE false)"/> <!-- true, false -->
   
   <include file="$(find turtlebot_bringup)/launch/includes/_robot.launch">
     <arg name="base" value="$(arg base)" />
     <arg name="stacks" value="$(arg stacks)" />
     <arg name="3d_sensor" value="$(arg 3d_sensor)" />
+    <arg name="using_fuerte" value="$(arg using_fuerte)" />
   </include>
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
   </node>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/model.rviz" />
+  
+  <node if="$(arg using_fuerte)" name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/model.vcg" />
+  <node unless="$(arg using_fuerte)" name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/model.rviz" />
 </launch>
