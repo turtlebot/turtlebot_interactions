@@ -5,11 +5,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/turtlebot_viz</url>
   <depend stack="common_msgs" /> <!-- visualization_msgs -->
-  <depend stack="diagnostics_monitors" /> <!-- robot_monitor -->
+  <depend stack="visualization" /> <!-- interactive_markers -->
   <depend stack="ros" /> <!-- roslib -->
   <depend stack="ros_comm" /> <!-- std_srvs, std_msgs, roscpp, rospy -->
-  <depend stack="rx" /> <!-- rxtools -->
-  <depend stack="turtlebot" /> <!-- turtlebot_node -->
-  <depend stack="visualization" /> <!-- interactive_markers -->
-
 </stack>
