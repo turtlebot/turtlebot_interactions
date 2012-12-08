@@ -2,11 +2,5 @@
   Used for visualising the turtlebot while building a map or navigating with the ros navistack. 
  -->
 <launch>
-  <arg name="using_fuerte" value="$(optenv TURTLEBOT_USING_FUERTE false)"/>
-  <group if="$(arg using_fuerte)">
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/navigation.vcg"/>
-  </group>
-  <group unless="$(arg using_fuerte)">
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/navigation.rviz"/>
-  </group>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/navigation.rviz"/>
 </launch>
