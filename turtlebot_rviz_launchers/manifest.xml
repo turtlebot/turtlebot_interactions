@@ -9,6 +9,7 @@
   <review status="unreviewed" notes=""/>
   <url>http://ros.org/wiki/turtlebot_rviz_launchers</url>
   <depend package="rviz"/>
+  <depend package="joint_state_publisher"/>
 </package>
 
 

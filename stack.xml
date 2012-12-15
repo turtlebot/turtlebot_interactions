@@ -9,4 +9,5 @@
   <depend stack="ros" /> <!-- roslib -->
   <depend stack="ros_comm" /> <!-- roscpp, rospy -->
   <depend stack="diagnostics_monitors" /> <!-- robot_monitor -->
+  <depend stack="robot_model_visualization" /> <!-- joint_state_publisher -->
 </stack>
