@@ -7,5 +7,6 @@
   <depend stack="common_msgs" /> <!-- visualization_msgs -->
   <depend stack="visualization" /> <!-- interactive_markers -->
   <depend stack="ros" /> <!-- roslib -->
-  <depend stack="ros_comm" /> <!-- std_srvs, std_msgs, roscpp, rospy -->
+  <depend stack="ros_comm" /> <!-- roscpp, rospy -->
+  <depend stack="diagnostics_monitors" /> <!-- robot_monitor -->
 </stack>
