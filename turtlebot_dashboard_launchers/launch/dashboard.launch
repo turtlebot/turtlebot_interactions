@@ -1,0 +1,6 @@
+<!-- Launches the base-specfic dashboard -->
+
+<launch>
+  <arg name="base" value="$(optenv TURTLEBOT_BASE kobuki)"/>  <!-- kobuki, create, rhoomba -->
+  <include file="$(find turtlebot_dashboard_launchers)/launch/$(arg base)/_dashboard.launch"/>
+</launch>
