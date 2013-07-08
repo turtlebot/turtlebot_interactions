@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>turtlebot_viz</name>
+  <version>0.1.0</version>
+  <description>Catkin meta-package for turtlebot_viz</description>
+  <maintainer email="marcus.liebhardt@yujinrobot.com">Marcus Liebhardt</maintainer>
+  <license>BSD</license>
+  <url type="website">http://ros.org/wiki/turtlebot_viz</url>
+  <author email="marcus.liebhardt@yujinrobot.com">Marcus Liebhardt</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>turtlebot_diagnostics</run_depend>
+  <run_depend>turtlebot_dashboard</run_depend>
+  <run_depend>turtlebot_interactive_markers</run_depend>
+  <run_depend>turtlebot_rviz_launchers</run_depend>
+  
+  <export>
+    <metapackage/>
+  </export>
+</package>
