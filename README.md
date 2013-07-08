@@ -1,3 +1,3 @@
 # turtlebot_viz
 
-Various visualisation and interactive tools for the TurtleBot
+Visualisation and interactive tools for the TurtleBot
