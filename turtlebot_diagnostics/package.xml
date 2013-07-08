@@ -1,15 +1,14 @@
 <?xml version="1.0"?>
 <package>
-  <name>turtlebot_rviz_launchers</name>
+  <name>turtlebot_diagnostics</name>
   <version>0.1.0</version>
-  <description>Launchers for visualizing TurtleBot</description>
+  <description>Launcher for diagnostic monitoring tools for the TurtleBot</description>
   <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
   <license>BSD</license>
-  <url type="website">http://ros.org/wiki/turtlebot_rviz_launchers</url>
+  <url type="website">http://ros.org/wiki/turtlebot_diagnostics</url>
   <author email="stonier@yujinrobot.com">Daniel Stonier</author>
   
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>rviz</run_depend>
-  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_monitor</run_depend>
 </package>
