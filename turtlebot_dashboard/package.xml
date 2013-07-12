@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>turtlebot_dashboard</name>
-  <version>0.2.0</version>
+  <version>2.1.0</version>
   <description>Launchers for the base-specific dashboards</description>
   <maintainer email="marcus.liebhardt@yujinrobot.com">Marcus Liebhardt</maintainer>
   <license>BSD</license>

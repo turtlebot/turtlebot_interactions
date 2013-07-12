@@ -2,7 +2,7 @@
 Changelog
 ^^^^^^^^^
 
-0.2.0 [2013-07-12]
+2.1.0 [2013-07-12]
 ==================
 
 * All packages have been catkinized.
