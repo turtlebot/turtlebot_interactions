@@ -6,6 +6,8 @@
   <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_interactive_markers</url>
+  <url type="repository">https://github.com/turtlebot/turtlebot_viz</url>
+  <url type="bugtracker">https://github.com/turtlebot/turtlebot_viz/issues</url>
   <author email="internship@willowgarage.com">Helen Oleynikova</author>
   
   <buildtool_depend>catkin</buildtool_depend>
