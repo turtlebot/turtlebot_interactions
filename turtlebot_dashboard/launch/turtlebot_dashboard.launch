@@ -2,5 +2,5 @@
 
 <launch>
   <arg name="base" value="$(optenv TURTLEBOT_BASE kobuki)"/>  <!-- kobuki, create, roomba -->
-  <include file="$(find turtlebot_dashboard)/launch/$(arg base)/_dashboard.xml"/>
+  <include file="$(find turtlebot_dashboard)/launch/$(arg base)/dashboard.launch.xml"/>
 </launch>
