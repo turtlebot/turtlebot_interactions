@@ -2,11 +2,18 @@
 Changelog for package turtlebot_dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.x - hydro, bugfixing
+========================
+
+2.2.0 (2013-08-30)
+------------------
+* Add bugtracker and repo info URLs.
+* Rename launcher includes to *.launch.xml.
+* Changelogs at package level.
+
+
 2.1.x - hydro, unstable
 =======================
-
-Forthcoming
------------
 
 2.1.1 (2013-07-23)
 ------------------

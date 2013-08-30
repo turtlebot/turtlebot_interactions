@@ -2,11 +2,19 @@
 Changelog for package turtlebot_rviz_launchers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.x - hydro, bugfixing
+========================
+
+2.2.0 (2013-08-30)
+------------------
+* Fix view model launcher and dependencies
+* view_navigation with default app manager standalone settings.
+* Add bugtracker and repo info URLs.
+* Changelogs at package level.
+
+
 2.1.x - hydro, unstable
 =======================
-
-Forthcoming
------------
 
 2.1.1 (2013-07-23)
 ------------------
