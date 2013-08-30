@@ -7,8 +7,8 @@ Changelog for package turtlebot_rviz_launchers
 
 2.2.0 (2013-08-30)
 ------------------
-* Fix view model launcher and dependencies
-* view_navigation with default app manager standalone settings.
+* Allow visualizing navigation regardless we use or not application namespaces (with argument use_app_ns).
+* Fix view model launcher and dependencies.
 * Add bugtracker and repo info URLs.
 * Changelogs at package level.
 

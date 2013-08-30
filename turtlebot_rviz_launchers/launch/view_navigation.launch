@@ -1,6 +1,12 @@
 <!--
-  Used for visualising the turtlebot while building a map or navigating with the ros navistack. 
+  Used for visualising the turtlebot while building a map or navigating with the ros navistack.
+  
+  Argument use_app_ns must be true whenever the navigation related topics lay inside an application
+  namespace (that is, navigation was launched by the app manager). Otherwise it must be false.
  -->
 <launch>
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/navigation.rviz"/>
+  <arg name="use_app_ns" default="false"/>
+  
+  <node if="$(arg use_app_ns)" name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/navigation_app.rviz"/>
+  <node unless="$(arg use_app_ns)" name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot_rviz_launchers)/rviz/navigation.rviz"/>
 </launch>
