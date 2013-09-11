@@ -2,8 +2,9 @@
 Changelog for package turtlebot_rviz_launchers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.2.x - hydro, bugfixing
-========================
+2.2.1 (2013-09-11)
+------------------
+* Use two separate turtlebot navigation launchers to make things obvious to users.
 
 2.2.0 (2013-08-30)
 ------------------
