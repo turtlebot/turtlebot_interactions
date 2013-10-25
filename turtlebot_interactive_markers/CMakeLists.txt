@@ -14,7 +14,7 @@ add_executable(turtlebot_marker_server src/turtlebot_marker_server.cpp)
 
 target_link_libraries(turtlebot_marker_server ${catkin_LIBRARIES})
 
-install(TARGETS turtlebot_marker_server DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+install(TARGETS turtlebot_marker_server DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
