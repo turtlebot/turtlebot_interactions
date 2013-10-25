@@ -2,6 +2,9 @@
 Changelog for package turtlebot_rviz_launchers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.2 (2013-10-25)
+------------------
+
 2.2.1 (2013-09-11)
 ------------------
 * Use two separate turtlebot navigation launchers to make things obvious to users.

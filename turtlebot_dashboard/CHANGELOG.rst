@@ -2,13 +2,10 @@
 Changelog for package turtlebot_dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-2.2.1 (2013-09-11)
-------------------
-
 2.2.0 (2013-08-30)
 ------------------
 * Add bugtracker and repo info URLs.
-* Rename launcher includes to *.launch.xml.
+* Rename launcher includes to xyz.launch.xml.
 * Changelogs at package level.
 
 

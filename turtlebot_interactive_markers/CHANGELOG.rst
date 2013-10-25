@@ -2,6 +2,11 @@
 Changelog for package turtlebot_interactive_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+2.2.2 (2013-10-25)
+------------------
+* Correct reference to renamed launcher.
+* Add missing install rule for the server.
+
 2.2.1 (2013-09-11)
 ------------------
 
