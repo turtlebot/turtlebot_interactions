@@ -1,5 +1,5 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Changelog for package turtlebot_viz
+Changelog for package turtlebot_interactions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2.2.0 (2013-08-30)

@@ -35,7 +35,7 @@
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="turtlebot_viz.null.17435872" name="turtlebot_viz"/>
+		<project id="turtlebot_interactions.null.17435872" name="turtlebot_interactions"/>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
