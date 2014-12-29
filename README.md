@@ -1,3 +1,3 @@
-# turtlebot_viz
+# Turtlebot Interactions
 
-Visualisation and interactive tools for the TurtleBot
+This is the evolution of the turtlebot_viz stack supporting user side interactions with the turtlebot.
