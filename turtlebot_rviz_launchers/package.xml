@@ -6,9 +6,9 @@
   <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
   <license>BSD</license>
   <url type="website">http://ros.org/wiki/turtlebot_rviz_launchers</url>
-  <url type="repository">https://github.com/turtlebot/turtlebot_viz</url>
-  <url type="bugtracker">https://github.com/turtlebot/turtlebot_viz/issues</url>
-  <author email="stonier@yujinrobot.com">Daniel Stonier</author>
+  <url type="repository">https://github.com/turtlebot/turtlebot_interactions</url>
+  <url type="bugtracker">https://github.com/turtlebot/turtlebot_interactions/issues</url>
+  <author>Daniel Stonier</author>
   
   <buildtool_depend>catkin</buildtool_depend>
 
