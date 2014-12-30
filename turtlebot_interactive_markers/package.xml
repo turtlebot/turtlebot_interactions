@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>turtlebot_interactive_markers</name>
-  <version>2.2.2</version>
+  <version>2.3.0</version>
   <description>Interactive control for the TurtleBot using RViz and interactive markers</description>
   <maintainer email="stonier@yujinrobot.com">Daniel Stonier</maintainer>
   <license>BSD</license>
