@@ -2,6 +2,9 @@
 Changelog for package turtlebot_rviz_launchers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.2 (2013-10-25)
 ------------------
 

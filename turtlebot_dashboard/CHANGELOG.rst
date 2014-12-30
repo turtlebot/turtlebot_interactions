@@ -2,6 +2,9 @@
 Changelog for package turtlebot_dashboard
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.2 (2013-10-25)
 ------------------
 * Unchanged release

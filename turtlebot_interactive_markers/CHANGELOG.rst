@@ -2,6 +2,9 @@
 Changelog for package turtlebot_interactive_markers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.2.2 (2013-10-25)
 ------------------
 * Correct reference to renamed launcher.
