@@ -274,7 +274,7 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz/DepthCloud
       Color: 255; 255; 255
-      Color Image Topic: /camera/rgb/image_color
+      Color Image Topic: /camera/rgb/image_rect_color
       Color Transformer: RGB8
       Color Transport Hint: raw
       Decay Time: 0
@@ -300,7 +300,7 @@ Visualization Manager:
       Value: false
     - Class: rviz/Image
       Enabled: false
-      Image Topic: /camera/rgb/image_color
+      Image Topic: /camera/rgb/image_rect_color
       Max Value: 1
       Median window: 5
       Min Value: 0
