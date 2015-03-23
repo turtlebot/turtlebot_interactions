@@ -2,6 +2,11 @@
 Changelog for package turtlebot_rviz_launchers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* image_color -> image_rect_color closes `#6 <https://github.com/turtlebot/turtlebot_interactions/issues/6>`_
+* Contributors: Jihoon Lee
+
 2.3.0 (2014-12-30)
 ------------------
 

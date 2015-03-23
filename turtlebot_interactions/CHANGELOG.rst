@@ -2,6 +2,9 @@
 Changelog for package turtlebot_interactions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.3.0 (2014-12-30)
 ------------------
 
